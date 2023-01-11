@@ -48,8 +48,6 @@ export function useFetch<Type>(url: string): RequestState<Type> {
 
   useEffect(() => {
     let cancelRequest = false;
-    if (!url || !url.trim()) return;
-
     const fetchData = async () => {
       dispatch({ type: FetchState.FETCHING });
       if (cache.current[url]) {
